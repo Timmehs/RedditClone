@@ -1,0 +1,30 @@
+<style>
+  table * {
+    padding: 5px;
+
+
+  }
+
+
+</style>
+
+<center>
+<br><h3 style="font-weight: normal;"><I>Welcome to the front page!</I></h3>
+
+
+
+<table>
+<% @posts.order(created_at: :desc).each do |post| %>
+  <tr>
+    <td>
+      <B><%= link_to post.title, post_url(post) %><B>
+    </td>
+    <td>
+      posted by <%= post.author.username %>
+      to <% post.subs.map do |sub| %>
+           <%= link_to sub.title, sub_url(sub)  %>
+         <% end.join(", ").html_safe  %>
+      <%= time_ago_in_words(post.created_at) %> ago
+    </td>
+  </tr>
+<% end %>

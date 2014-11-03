@@ -1,0 +1,13 @@
+// Place all the styles related to the Posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#comment_box {
+  background-color: rgb(230, 237, 255);
+  width: 30%;
+  padding: 5px 5px 15px 5px;
+  margin: 5px;
+
+  .comment_head {
+    font-size: small;
+  }
+}

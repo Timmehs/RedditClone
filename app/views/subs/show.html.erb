@@ -1,0 +1,16 @@
+<h1><%= @sub.title %></h1>
+
+<%= link_to "New Post", new_sub_post_url(@sub) %>
+
+<table>
+<% @sub.posts.order(created_at: :desc).each do |post| %>
+  <tr>
+    <td>
+      <B><%= link_to post.title, post_url(post) %><B>
+    </td>
+    <td>
+      posted by <%= post.author.username %>
+      <%= time_ago_in_words(post.created_at) %> ago
+    </td>
+  </tr>
+<% end %>

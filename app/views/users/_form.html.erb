@@ -1,0 +1,18 @@
+<form
+  action="/<%= target %>" method="POST">
+
+  <input type="hidden" name="authenticity_token"
+    value="<%= form_authenticity_token %>">
+  <div style="width: 200px; display: inline;">
+    <Label>Username:</label>
+    <input type="text"
+      value="<%= user.username %>" name="<%=target %>[username]">
+    <br>
+    <Label>Password:</label>
+    <input type="password" name="<%= target %>[password]">
+    <br>
+    <center>
+    <input type="submit" value="Log in">
+  </div>
+
+</form>

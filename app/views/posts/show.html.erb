@@ -1,0 +1,16 @@
+<h1><a href="<%= @post.url %>"><%= @post.title %></a></h1>
+<p><%= @post.content %></p>
+  
+  <% @post.comments.each do |comment| %>
+  <div id="comment_box">
+    <table>
+      <td class="comment_head"><b><%= comment.author.username %></b>
+        <%= time_ago_in_words(comment.created_at) %> ago</td>
+      <tr>
+        <td><%= comment.content %></td>
+      </tr>
+    </table>
+  </div>
+  <% end  %>
+
+<%= link_to "Post a comment", new_post_comment_url(@post) %>
